@@ -1,44 +1,37 @@
-# Backup-Utility
-This script  automates the regular backup process for specified directories on a Linux server. It creates timestamped backup files. For educational purposes only.
+# Ejercicio de Ciberseguridad 2:
 
+### Paso 1: 
+Asegúrese de tener acceso a un servidor Linux o a una máquina Linux en la que desee realizar las copias de seguridad.
+Servidor local donde se va a hacer el backup por SSH:
 
+ ![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/74cc3692-4f57-4b31-ba4a-9b870089d3e5)
 
+### Paso 2: 
+Crea el Script: Utiliza un editor de texto como nano o vi para crear el script.
+Script en bash: comprime el archivo, y lo prepara para enviar al servidor.
+Se le dio permisos de ejecución con el comando chmod +x backup.sh
+Se modificaron las rutas de origen y destino y se provee la ruta del servidor.
 
+ ![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/ccc55129-1719-4b4f-853a-1de25a837abe)
 
-How it works?
+### Paso 3: 
+Se ejecuta manualmente el script
 
+ ![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/0c4da225-83ab-4a3f-8fe8-be3d58114801)
 
+### Paso 4: 
+Programamos la tarea cron con crontab -e:
+Comprobamos si funciona cada 1 minuto:
 
-Prepare the Environment:
-Ensure you have access to a Linux server or a Linux machine where you want to perform backups.
-Create the Script:
-Use a text editor such as nano or vi to create the script. You can copy and paste the script code I mentioned earlier. For example:
-bash
-Copy code
-nano backup.sh
-Then, paste the script code into the text editor and save it.
-Give Execute Permissions to the Script:
-Run the following command to give execute permissions to the script:
-bash
-Copy code
-chmod +x backup.sh
-Set the Paths:
-In the script, make sure to modify the origin and destination variables with the paths of the directories you want to back up and the location where you want to store the backups.
-Manually Run the Script:
-To manually run the script and perform a backup, simply execute the following command:
-bash
-Copy code
-./backup.sh
-The script will compress the files from the source directory and create a backup in the destination directory.
-Schedule Automatic Execution (Optional):
-If you want the script to run automatically at regular intervals, you can schedule it using the cron utility. To edit the cron table, run:
-bash
-Copy code
-crontab -e
-Then, add a line like this to schedule daily execution at a specific time:
-bash
-Copy code
-0 2 * * * /path/to/backup/script.sh
-This will run the script every day at 2:00 AM. Adjust the values to suit your specific needs.
-Remember to customize the paths and scheduling according to your specific requirements and setup. This script is a basic example, and you can customize it to fit your environment and needs.
+ ![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/c37562aa-1d7c-4212-ba58-15c6b7d1163f)
+ 
+![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/b9283bdd-b9f5-4dfe-9427-52e425761bf5)
+
+ 
+
+Lo programamos para que se ejecute todos los días a las 14 horas:
+
+ ![image](https://github.com/JoseEliasMorales/Ejercicio-Ciberseguridad-2/assets/107495777/61a30536-ceff-400c-a87c-41360732db30)
+
+## Backup finalizado.
 
